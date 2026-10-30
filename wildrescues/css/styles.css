@@ -116,3 +116,45 @@ th {
 tr:nth-child(odd) {
     background-color: #deccba;
 }
+/* Contact form styles */
+form {
+    width: auto;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-gap: 20px;
+}
+
+.btn {
+    grid-column: 1 / span 2;
+}
+#form h2 {
+    text-align: center;
+}
+
+fieldset {
+    padding: 2%;
+    margin-bottom: 2%;
+}
+
+fieldset legend {
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+label {
+    display: block;
+    padding-top: 3%;
+}
+
+form #submit {
+    display: block;
+    margin: 0 auto;
+    padding: 2%;
+    background-color: #78593a;
+    color: #fff;
+    font-size: 1em;
+    border-radius: 10px;
+}
