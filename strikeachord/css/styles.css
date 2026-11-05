@@ -1,5 +1,5 @@
 /* CSS Reset */
-body, header, nav, main, footer, img, h1 {
+body, header, nav, main, footer, img, h1, ul {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,15 +11,19 @@ img {
     display: block;
 }
 
+.tab-desk {
+    display: none;
+}
+
 /* Style rules for header content */
 header {
     text-align: center;
-    font-size: 3em;
+    font-size: 1.5em;
     color: #373684;
 }
 
 header h1 {
-    font-style: italic;
+    font-family: "DM Serif Display", serif;
 }
 
 /* Style rules for navigation area */
@@ -29,12 +33,12 @@ nav {
 
 nav ul {
     list-style-type: none;
-    margin: 0;
     text-align: center;
 }
 
 nav li {
-    display: inline-block;
+    display: block;
+    border-top: 1px solid #e5e9fc;
     font-size: 2em;
 }
 
@@ -51,7 +55,7 @@ main {
     padding: 2%;
     background-color: #e5e9fc;
     overflow: auto;
-    font-family: Verdana, Arial, sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
 main p {
@@ -59,14 +63,12 @@ main p {
 }
 
 .action {
-    font-size: 1.75em;
+    font-size: 1.25em;
     color: #373684;
     font-weight: bold;
 }
 
 #piano, #guitar, #violin {
-    width: 29%;
-    float: left;
     margin: 0 2%;
 }
 
@@ -76,17 +78,43 @@ main p {
     padding: 1% 2%;
 }
 
+#info ul {
+    margin-left: 10%;
+}
+
+.round {
+    border-radius: 8px;
+}
+
 #contact {
     text-align: center;
 }
 
-#contact a {
+.tel-link {
+    background-color: #373684;
+    padding: 2%;
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.tel-link a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: block;
+}
+
+#contact .email-link {
     color: #4645a8;
     text-decoration: none;
     font-weight: bold;
 }
 
 .map {
+    width: 95%;
+    height: 50%;
     border: 5px solid #373684;
 }
 
@@ -165,4 +193,14 @@ form #submit {
 
 .btn {
     grid-column: 1 / span 2;
+}
+/* Stack the existing contact form on small screens. */
+@media screen and (max-width: 600px) {
+    .form-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .btn {
+        grid-column: 1;
+    }
 }
