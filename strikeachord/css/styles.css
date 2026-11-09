@@ -1,5 +1,5 @@
 /* CSS Reset */
-body, header, nav, main, footer, img, h1, ul {
+body, header, nav, main, footer, img, h1 {
     margin: 0;
     padding: 0;
     border: 0;
@@ -11,19 +11,15 @@ img {
     display: block;
 }
 
-.tab-desk {
-    display: none;
-}
-
 /* Style rules for header content */
 header {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 3em;
     color: #373684;
 }
 
 header h1 {
-    font-family: "DM Serif Display", serif;
+    font-style: italic;
 }
 
 /* Style rules for navigation area */
@@ -33,12 +29,12 @@ nav {
 
 nav ul {
     list-style-type: none;
+    margin: 0;
     text-align: center;
 }
 
 nav li {
-    display: block;
-    border-top: 1px solid #e5e9fc;
+    display: inline-block;
     font-size: 2em;
 }
 
@@ -55,7 +51,7 @@ main {
     padding: 2%;
     background-color: #e5e9fc;
     overflow: auto;
-    font-family: "Roboto", sans-serif;
+    font-family: Verdana, Arial, sans-serif;
 }
 
 main p {
@@ -63,12 +59,14 @@ main p {
 }
 
 .action {
-    font-size: 1.25em;
+    font-size: 1.75em;
     color: #373684;
     font-weight: bold;
 }
 
 #piano, #guitar, #violin {
+    width: 29%;
+    float: left;
     margin: 0 2%;
 }
 
@@ -78,43 +76,17 @@ main p {
     padding: 1% 2%;
 }
 
-#info ul {
-    margin-left: 10%;
-}
-
-.round {
-    border-radius: 8px;
-}
-
 #contact {
     text-align: center;
 }
 
-.tel-link {
-    background-color: #373684;
-    padding: 2%;
-    margin: 0 auto;
-    width: 80%;
-    text-align: center;
-    border-radius: 5px;
-}
-
-.tel-link a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5em;
-    display: block;
-}
-
-#contact .email-link {
+#contact a {
     color: #4645a8;
     text-decoration: none;
     font-weight: bold;
 }
 
 .map {
-    width: 95%;
-    height: 50%;
     border: 5px solid #373684;
 }
 
@@ -194,13 +166,84 @@ form #submit {
 .btn {
     grid-column: 1 / span 2;
 }
-/* Stack the existing contact form on small screens. */
-@media screen and (max-width: 600px) {
-    .form-grid {
-        grid-template-columns: minmax(0, 1fr);
+/* Media Query for Tablet Viewport */
+@media screen and (min-width: 550px), print {
+
+    /* Tablet Viewport: Show .tab-desk class, hide .mobile class */
+    .tab-desk {
+        display: block;
     }
 
-    .btn {
-        grid-column: 1;
+    .mobile {
+        display: none;
+    }
+
+    /* Tablet Viewport: Style rule for header content */
+    span.tab-desk {
+        display: inline;
+    }
+
+    /* Tablet Viewport: Style rules for nav area */
+    nav li {
+        border-top: none;
+        display: inline-block;
+        font-size: 1.5em;
+        border-right: 1px solid #e5e9fc;
+    }
+
+    nav li:last-child {
+        border-right: none;
+    }
+
+    nav li a {
+        padding: 0.25em 0.5em;
+    }
+
+    /* Tablet Viewport: Style rule for map */
+    .map {
+        width: 500px;
+        height: 450px;
+    }
+}
+
+/* Media Query for Desktop Viewport */
+@media screen and (min-width: 769px), print {
+
+    /* Desktop Viewport: Style rule for header */
+    header {
+        padding: 2%;
+    }
+
+    /* Desktop Viewport: Style rules for nav area */
+    nav li a {
+        padding: 0.5em 1.5em;
+    }
+
+    nav li a:hover {
+        color: #373684;
+        background-color: #e5e9fc;
+    }
+
+    /* Desktop Viewport: Style rules for main content */
+    #info ul {
+        margin-left: 5%;
+    }
+
+    main h3 {
+        font-size: 1.5em;
+    }
+
+    #piano, #guitar, #violin {
+        width: 29%;
+        float: left;
+        margin: 0 2%;
+    }
+}
+
+/* Media Query for Print */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
     }
 }
